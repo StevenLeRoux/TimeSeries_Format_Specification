@@ -12,6 +12,8 @@ Caveat
 
 This proposal does not intend to be backward compliant with all existing tools, since some of them present missing capabilities or don't provide an extensible format.
 
+This proposal covers only the representation of TimeSeries, which is mainly useful for emitters and restitution. It does not cover the data stucture used to implement a TS storage service.
+
 Current metrics solutions
 =========================
 
@@ -122,6 +124,21 @@ Moreover :
  - Doubles are in the form `-?[0-9]+\.[0-9]+` like 1.0001, 42.42 or -12.34. No use of scientific notation.
 
 
+Resulting Series
+================
+
+This format offers the ability for a CLI to present a serie under the form for a given time range:
+
+```
+    health.heart.beats{unit=BeatsPerMin,freq=min} 60 65 68 72 75 85 89 91 94 96 99 102 105 100 95 91
+    linux.proc.cpu.load{host=1.1.1.1,hostname=host.domain.tld,rack=01,position=u30} 1 0 0 0 0 1 2 3 4 10 3 2 1 1 1 0
+    ipmi.fan.rpm{host=1.1.1.1,hostname=host.domain.tld,rack=01,position=u30} 200 200 200 200 200 201 202 200 200 203 205 350 500 1500 2500 1300 600 -
+    ipmi.fan.status{host=1.1.1.1,hostname=host.domain.tld,rack=01,position=u30}} 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 -
+    home.sensors.temperature{unit=celcius,roomId=10,roomName=parentsBedRoom,house=SF} 20 19 19 19 19 20 20 20 19 19 20 19 20 21 21 22 21 21 
+    ...
+```
+
+
 Out of scope definitions
 ========================
 
@@ -135,6 +152,8 @@ Left to Client/Server implementations :
   * Cryptography
   * Transport Protocol
     - binary/HTTP/Auth/...
+  * Backend storage format
+
 
 Contributors
 ============
