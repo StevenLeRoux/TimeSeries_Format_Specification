@@ -10,7 +10,7 @@ Since we are at the beginning of the TimeSeries era, the intent of this proposal
 Caveat
 ======
 
-This proposal does not intend to be backward compliant with all existing tool, since some of them presents missing capabilities and does not provide an extensible format.
+This proposal does not intend to be backward compliant with all existing tools, since some of them present missing capabilities or don't provide an extensible format.
 
 Current metrics solutions
 =========================
