@@ -131,9 +131,9 @@ It offers to service providers the ability to provide differents optimizations r
 
 Left to Client/Server implementations :
 
-  ** Compression
-  ** Cryptography
-  ** Transport Protocol
+  * Compression
+  * Cryptography
+  * Transport Protocol
     - binary/HTTP/Auth/...
 
 
